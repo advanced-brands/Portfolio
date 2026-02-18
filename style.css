@@ -101,10 +101,15 @@ body {
 
 .pricing-card {
   background: #c4def0;
-  padding: 40px 30px;
+  /* reduced padding to make cards shorter */
+  padding: 20px 18px;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.06);
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* push footer text down */
+  max-height: 300px; /* prevent overly tall cards */
 }
 
 .pricing-card:hover {
@@ -112,23 +117,25 @@ body {
 }
 
 .pricing-card h3 {
-  margin-bottom: 15px;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
 }
 
 .price {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .pages {
   font-weight: 500;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .desc {
   color: #555;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  line-height: 1.3;
 }
 
 .pricing-card.featured {
@@ -155,10 +162,58 @@ body {
   color: #54acbf;
 }
 
+/* slideshow container */
+.work-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .work-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: flex;
   gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.card {
+  flex: 0 0 260px;
+  scroll-snap-align: center;
+}
+
+/* hide scrollbar visually but keep functionality */
+.work-grid::-webkit-scrollbar {
+  height: 8px;
+}
+.work-grid::-webkit-scrollbar-thumb {
+  background: rgba(30,174,152,0.6);
+  border-radius: 4px;
+}
+
+/* slide buttons */
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.3);
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 5;
+  border-radius: 50%;
+}
+.slide-btn.prev {
+  left: 0;
+}
+.slide-btn.next {
+  right: 0;
+}
+.slide-btn:hover {
+  background: rgba(0,0,0,0.5);
 }
 
 .card {
@@ -298,6 +353,46 @@ body {
 
 
 
+/* Testimonials */
+.testimonials {
+  padding: 4rem 1.5rem;
+  background: #011236;
+  text-align: center;
+  color: #fff;
+}
+.testimonials h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+.testimonial-container {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  height: 120px;
+}
+.testimonial {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+  padding: 0 1rem;
+}
+.testimonial.active {
+  opacity: 1;
+}
+.testimonial p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+.testimonial .author {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #54acbf;
+}
+
 /* Footer */
 .footer {
   text-align: center;
@@ -305,4 +400,84 @@ body {
   font-size: 0.9rem;
   color: #54acbf;
   border-top: 1px solid #09203F;
+}
+
+/* -------------------------------------------------------------
+   mobile scaling: keep desktop layout but shrink elements
+   (desktop design replicated, only smaller on narrow screens)
+   ------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* scale down the root font size so rem-based values shrink */
+  html {
+    font-size: 0.85rem;
+    
+  }
+
+  /* navbar adjustments */
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
+  .logo {
+    font-size: 1rem;
+  }
+
+  /* hero */
+  .hero {
+    padding: 3rem 1rem;
+  }
+  .hero-img {
+    width: 150px;
+    height: 150px;
+  }
+  .hero-text h1 {
+    font-size: 1.6rem;
+  }
+
+  /* pricing section */
+  .pricing-section {
+    padding: 60px 15px;
+  }
+  .pricing-card {
+    padding: 20px 15px;
+    max-height: 170px;
+  }
+  /* keep the 4‑column grid, allow horizontal scroll if needed */
+  .pricing-grid {
+    grid-template-columns: repeat(4, 1fr);
+    overflow: hidden;
+  }
+
+  /* work section */
+  .work {
+    padding: 3rem 1rem;
+  }
+  .work-intro {
+    margin: 0.5rem auto 1.5rem;
+  }
+  .card {
+    padding: 0.8rem;
+  }
+  .card-img {
+    height: 150px;
+  }
+
+  /* contact */
+  .contact {
+    padding: 60px 15px;
+  }
+  .contact-card {
+    width: 200px;
+    padding: 20px 12px;
+  }
+  .social-links a {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  /* footer */
+  .footer {
+    padding: 1.5rem 1rem;
+    font-size: 0.8rem;
+  }
 }
