@@ -439,12 +439,21 @@ body {
   }
   .pricing-card {
     padding: 20px 15px;
-    max-height: 170px;
+    /* remove the fixed height on small screens so text can wrap naturally */
+    max-height: none;
   }
-  /* keep the 4‑column grid, allow horizontal scroll if needed */
+  /* two-column grid on narrow screens with wrapping */
   .pricing-grid {
-    grid-template-columns: repeat(4, 1fr);
-    overflow: hidden;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    overflow: visible;
+  }
+  /* adjust text a bit for smaller cards */
+  .pricing-card h3 {
+    font-size: 1rem;
+  }
+  .price {
+    font-size: 1.4rem;
   }
 
   /* work section */
