@@ -490,3 +490,128 @@ body {
     font-size: 0.8rem;
   }
 }
+
+
+.hero-subline {
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.services-split {
+  padding: 80px 0;
+}
+
+.split-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.split-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.split-card:hover {
+  transform: translateY(-5px);
+}
+
+.shop-education {
+  background: #f7f7f7;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.whatsapp-conversion {
+  padding: 80px 0;
+  text-align: center;
+  background: linear-gradient(135deg, #0a2540, #123b63);
+  color: white;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn.primary {
+  background: #0a2540;
+  color: #fff;
+}
+
+.btn.secondary {
+  background: #eaeaea;
+  color: #333;
+}
+
+.btn.whatsapp {
+  background: #25D366;
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+section {
+  padding: 80px 0;
+}
+
+.section-final {
+  background: #082157 ;
+  color: #54acbf;
+  text-align: center;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.whatsapp-button {
+    background: #25D366;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.home-button {
+    background: #121755;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
