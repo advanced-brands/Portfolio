@@ -262,7 +262,7 @@ body {
 /* Contact */
 .contact {
   padding: 80px 20px;
-  background: #09203F;
+  background: #023859;;
   text-align: center;
 }
 
@@ -505,7 +505,8 @@ body {
 }
 
 .services-split {
-  padding: 80px 0;
+  background: #023859;
+  text-align: center;
 }
 
 .split-grid {
@@ -513,6 +514,9 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   margin-top: 40px;
+  padding: 80px 0;
+  margin: 0 auto;
+  max-width: 1100px;
 }
 
 .split-card {
@@ -527,11 +531,17 @@ body {
   transform: translateY(-5px);
 }
 
-.shop-education {
+
+
+.shop-education .container{
   background: #f7f7f7;
-  padding: 80px 0;
+  padding: 90px 0;
   text-align: center;
+  margin: 0 auto;
+  max-width: 900px;
+
 }
+
 
 .whatsapp-conversion {
   padding: 80px 0;
